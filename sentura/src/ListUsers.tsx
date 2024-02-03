@@ -14,6 +14,8 @@ export default function ListUsers() {
           axios.get("https://7057f138d2224f01b4af1705865e57e7.weavy.io/api/users", {headers: headers})
           .then((res)=>{
             console.log(res.data)
+            setUser(res.data.data)
+
 
           }).catch((er)=>{
             console.log(er)
@@ -21,10 +23,13 @@ export default function ListUsers() {
           })
         
 
-    })
+    },[])
   return (
     <div>
         <h1>List Users</h1>
+        <button onClick={()=>{
+            console.log(userData)
+        }}>Print Users in the Console.</button>
         
 
 
