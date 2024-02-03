@@ -15,7 +15,7 @@ export default function CreateUser() {
     picture: "",
     directory: "",
     meta_data: "",
-    tags: "",
+    tags: [],
     is_suspended: "",
   };
   const [userData, setUser] = useState(user);
@@ -120,12 +120,14 @@ export default function CreateUser() {
           }}
         />
         <input
-          type="text"
-          placeholder="tags"
-          style={{ margin: "1rem" }}
-          onChange={(e) => {
-            setUser({ ...userData, tags: e.target.value });
-          }}
+            type="text"
+            placeholder="tags"
+            style={{ margin: "1rem" }}
+            onChange={(e) => {
+                
+                let tags = e.target.value.split(",");
+                setUser({ ...userData, tags: tags } as typeof userData);
+            }}
         />
         <input
           type="text"
@@ -135,13 +137,28 @@ export default function CreateUser() {
             setUser({ ...userData, is_suspended: e.target.value });
           }}
         />
-        <button onClick={()=>{
-            let headers ={
-                "Content-Type":"application/json",
-                "Authorization":"Bearer wys_L3fkkQECW9Cce7foTj1eBwvfH7X8tA46oDoT"
-            }
-            axios.post("")
-        }}>Submit.</button>
+        <button
+          onClick={() => {
+            let headers = {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer wys_L3fkkQECW9Cce7foTj1eBwvfH7X8tA46oDoT",
+            };
+            axios
+              .post(
+                "https://7057f138d2224f01b4af1705865e57e7.weavy.io/api/users",
+                userData,
+                { headers: headers }
+              )
+              .then((res) => {
+                console.log(res.data);
+              })
+              .catch((er) => {
+                console.log(er);
+              });
+          }}
+        >
+          Submit.
+        </button>
       </div>
     </div>
   );
