@@ -148,10 +148,12 @@ export default function UpdateUser() {
                 { headers: headers }
               )
               .then((res) => {
+                console.log('User Updated!');
                 console.log(res.data);
               })
               .catch((er) => {
-                console.log(er);
+                er.response.status===404?console.log('User not exists with ID  : ',id):console.log(er.response.status);
+                
               });
           }}
         >

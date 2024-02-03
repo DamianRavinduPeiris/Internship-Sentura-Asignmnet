@@ -22,8 +22,8 @@ export default function SearchUser() {
               .then((res)=>{
                 console.log(res.data)
 
-              }).catch((er)=>{
-                console.log(er)
+              }).catch((er:string)=>{
+                console.log("User not found : ")
 
               })
 

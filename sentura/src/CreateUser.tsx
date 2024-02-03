@@ -137,10 +137,11 @@ export default function CreateUser() {
                 { headers: headers }
               )
               .then((res) => {
+                console.log("User created with ID : "+userData.uid);
                 console.log(res.data);
               })
               .catch((er) => {
-                console.log(er);
+                console.log("User already exists with ID : "+userData.uid);
               });
           }}
         >
