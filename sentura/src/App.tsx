@@ -5,18 +5,21 @@ import './App.css'
 import CreateUser from './CreateUser'
 import ListUsers from './ListUsers'
 import SearchUser from './SearchUser'
+import UpdateUser from './UpdateUser'
+
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
     <CreateUser />
     <ListUsers />
     <SearchUser />
+    <UpdateUser />
       
        
     </>
