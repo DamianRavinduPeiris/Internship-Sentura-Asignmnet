@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import CreateUser from './CreateUser'
 import ListUsers from './ListUsers'
+import SearchUser from './SearchUser'
+
 
 
 
@@ -14,6 +16,7 @@ function App() {
     <>
     <CreateUser />
     <ListUsers />
+    <SearchUser />
       
        
     </>
