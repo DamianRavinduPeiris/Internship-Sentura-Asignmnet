@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import user from './User';
 
 
 
 export default function ListUsers() {
+    const[userData,setUser]=useState(user);
     useEffect(()=>{
         let headers = {
             "Content-Type": "application/json",

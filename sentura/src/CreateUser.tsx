@@ -1,23 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
+import user from "./User";
+
 
 export default function CreateUser() {
-  let user = {
-    uid: "",
-    email: "",
-    given_name: "",
-    middle_name: "",
-    name: "",
-    family_name: "",
-    nickname: "",
-    phone_number: "",
-    comment: "",
-    picture: "",
-    directory: "",
-    meta_data: "",
-    tags: [],
-    is_suspended: "",
-  };
+  
   const [userData, setUser] = useState(user);
   return (
     <div>
