@@ -6,6 +6,7 @@ import CreateUser from './CreateUser'
 import ListUsers from './ListUsers'
 import SearchUser from './SearchUser'
 import UpdateUser from './UpdateUser'
+import DeleteUser from './DeleteUser'
 
 
 
@@ -20,6 +21,7 @@ function App() {
     <ListUsers />
     <SearchUser />
     <UpdateUser />
+    <DeleteUser />
       
        
     </>
